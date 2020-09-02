@@ -1,26 +1,26 @@
 --Exercício 1: Operador lógico OU (pré-fixo):
 -- a) Apresente 3 definições para o operador lógico OU, utilizando casamento de padrões.
 
-myOr :: Bool -> Bool -> Bool
-myOr True True = True
-myOr True False = True
-myOr False True = True
-myOr False False = False
-myOr2 :: Bool -> Bool -> Bool
-myOr2 False False = False
-myOr2 True _ = True
-myOr3 :: Bool -> Bool -> Bool
-myOr3 False b = b
-myOr3 True _ = True
+padrãoOu :: Bool -> Bool -> Bool
+padrãoOu True True = True
+padrãoOu True False = True
+padrãoOu False True = True
+padrãoOu False False = False
+padrãoOu2 :: Bool -> Bool -> Bool
+padrãoOu2 False False = False
+padrãoOu2 True _ = True
+padrãoOu3 :: Bool -> Bool -> Bool
+padrãoOu3 False b = b
+padrãoOu3 True _ = True
 
 -- b) Apresente 2 definições para o operador lógico OU, utilizando expressões condicionais (no lugar de casamento de padrões).
-myOr4 :: Bool -> Bool -> Bool
-myOr4 a b =
+condicionalOu4 :: Bool -> Bool -> Bool
+condicionalOu4 a b =
   if (a == False && b == False)
     then False
     else True
-myOr5 :: Bool -> Bool -> Bool
-myOr5 a b =
+condicionalOu5 :: Bool -> Bool -> Bool
+condicionalOu5 a b =
   if (a /= b)
     then True
     else
@@ -63,12 +63,14 @@ n_tri n
   | n == 3 = 6
   | otherwise = n_tri (n - 3) + n_tri (n - 2) + n_tri (n - 1)
 
--- Todo:Exercício 7
+-- Exercício 7
 
-passo :: (Int, Int) -> (Int, Int)
-passo (x, y) = (y, x + y)
+caminho :: (Int, Int) -> (Int, Int)
+caminho (x, y) = (y, x + y)
 
-
+fibo2 :: Int -> (Int, Int)
+fibo2 0 = (0,1)
+fibo2 n = caminho (fibo2 (n - 1))
 
 --Exercício 8:  Escreva a função potencia2, que calcula a potência de 2 elevada a um expoente n
 -- de forma recursiva: 2n = 2n-1 * 2.
