@@ -27,6 +27,7 @@ condicionalOu5 a b =
       if (a == b && b == False)
         then False
         else True
+
 --Exercício 2:  Defina uma função que recebe dois pontos no espaço e retorna a distância entre eles.
 -- Considere que um ponto no espaço é representado por uma dupla de números (float) que correspondem às coordenadas do ponto.
 
@@ -59,8 +60,6 @@ n_tri :: Int -> Int
 n_tri n
   | n == 0 = 0
   | n == 1 = 1
-  | n == 2 = 3
-  | n == 3 = 6
   | otherwise = n_tri (n - 3) + n_tri (n - 2) + n_tri (n - 1)
 
 -- Exercício 7
